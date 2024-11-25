@@ -1,20 +1,119 @@
+:root {
+    background: #efefef;
+    --contrast-color:#363d46;
+    --first-gray:#efefef;
+    --second-gray:#f4f4f4;
+}
+
+.scheme-1 {
+    background: var(--first-gray)
+}
+.scheme-2 {
+    background: var(--second-gray)
+}
+
+h2, h3, h4, h6, p {
+    margin: 0;
+}
+
+h5 {
+    margin-block-start: 1rem;
+    margin-block-end: .5rem;
+}
+
+a {
+    text-transform: uppercase;
+    color: var(--secondary-color)
+}
+
+.text-center {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.icon {
+    width: 30px;
+}
+
 .padded-container {
     padding: 10%;
+    max-width: 1200px;
 }
 
 .row {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
-  }
-  
-.column {
+    align-items: stretch;
+}
+
+.v-stack {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
+    gap: 10px;
+}
+
+.media-gallery img {
+    max-width:300px;
+}
+
+.media-gallery {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.media-gallery .row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+
+.media-gallery .first-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     flex: 1;
-    margin-inline: 20px;
+}
+
+.media-gallery .tall-v-stack {
+    flex: 1;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .media-gallery {
+        flex-direction: column;
+    }
+
+    .media-gallery .first-column {
+        flex: 1;
+        min-width: 100%;
+    }
+
+    .media-gallery .tall-v-stack {
+        width: 100%;
+        height: auto;
+    }
+}
+  
+.column {
+    flex: 1;
 }
 
 .column:first-of-type {
@@ -25,30 +124,14 @@
     margin-inline-end: 0;
 }
 
-.tall-column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 2;
-}
-
-.v-8 {
-    line-clamp: 8px;
-}
-
-.media-gallery {
-    grid-template-columns: 2;
-}
-
 .button-outline {
-    border: 1px solid black;
+    border: 2px solid black;
     margin-bottom: 10px;
 }
 
 .collapsible {
-    background: white;
     cursor: pointer;
-    padding: 18px;
+    padding: 5px 15px;
     width: 100%;
     text-align: left;
     font-size: 15px;
@@ -76,4 +159,26 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+.text-with-icon {
+    align-items: start;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 1rem;
+}
+
+.icon {
+    aspect-ratio: 1;
+    align-content: center;
+    height: auto;
+    transition: transform .2s;
+}
+
+.vertical-center {
+    align-self: center;
+}
+
+.background-img {
+    z-index: 0;
 }

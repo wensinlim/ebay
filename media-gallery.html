@@ -1,0 +1,96 @@
+<html>
+<head>
+    <style>
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-height: 60vh
+}
+
+.vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    max-width: 30%;
+    min-width: 30%;
+}
+
+.horizontal-stack {
+    display: flex;
+}
+
+
+.stack, .tall {
+    flex: 1;
+}
+
+.stack, .tall {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.stack img, .tall img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .horizontal-stack {
+        flex-direction: column;
+    }
+
+    .vertical-stack {
+        flex-direction: row;
+        gap: 10px;
+        flex: none;
+        max-width: none;
+    }
+
+    .stack {
+        flex: 1;
+        width: auto;
+        height: 100px;
+    }
+
+    .tall {
+        width: 100%;
+        height: 100px;
+        max-height:500px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <section style="padding: 5%;" class="horizontal-stack">
+        <div class="vertical-stack" style="padding-right:20px;">
+            <div>
+                <h3 class="heading">THE FREDDIE</h3>
+                <div style="margin-block: auto;">
+                    <p class="subheading" style="padding-block-end: 1rem">Minimalist Comforts</p>
+                    <p>The Freddie Chair combines sleek Danish-inspired design with modern comfort and eco-conscious materials. With a sturdy Black Onyx metal frame and sustainable fabric, it’s an affordable, stylish choice for any space.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="vertical-stack">
+                <div class="stack"><img src="images/chair 4.png" alt="Box 1"></div>
+                <div class="stack"><img src="images/chair 2.png" alt="Box 2"></div>
+                <div class="stack"><img src="images/chair 3.png" alt="Box 3"></div>
+            </div>
+            <div class="tall"><img src="images/chair 1.png" alt="Tall Block"></div>
+        </div>
+    </section>
+    
+</body>
+</html>
